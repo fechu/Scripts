@@ -25,7 +25,7 @@ class Hash extends SM\Script\Script {
 	if (isset($this->options['s']))
 	{
 	    // Hash the string
-	    fwrite(STDOUT, $this->hashString($this->options['s']) . "\n");
+	    $this->write($this->hashString($this->options['s']));
 	    return;
 	}
 	
@@ -34,12 +34,12 @@ class Hash extends SM\Script\Script {
 	    $file = $this->options['f'];
 	    if (!file_exists($file))
 	    {
-		fwrite(STDOUT, "I could not find a file at " . $file);
+		$this->write("I could not find a file at " . $file);
 		return;
 	    }
 	    
 	    // Hash the file
-	    fwrite(STDOUT, $this->hashFile($file). "\n");
+	    $this->write( $this->hashFile($file));
 	}
     }
     
@@ -80,7 +80,7 @@ class Hash extends SM\Script\Script {
 	    -a	The algorithm I should use to hash. 
 	    ";
 	
-	fwrite(STDOUT, $help . "\n");
+	$this->write( $help );
     }
 }
 
