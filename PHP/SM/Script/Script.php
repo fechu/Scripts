@@ -15,9 +15,10 @@ class Script {
      * Shows the help.
      * This method is supposed to be overriden in a subclass.
      */
-    protected function help() {
-	fwrite(STDOUT, "No help available\n");
-	}
+    protected function help()
+    {
+	$this->write("No help available\n");
+    }
 
     /**
      * Run the script.
@@ -82,7 +83,7 @@ class Script {
 		if (!in_array($value, $should))
 		{
 		    // Received an invalid options
-		    fwrite(STDOUT, "Received invalid value for option \"" . $option . "\". Possible Values: \n" . join("\n", $should) . "\n");
+		    $this->write("Received invalid value for option \"" . $option . "\". Possible Values: \n" . join("\n", $should));
 		    return;
 		}
 	    }
@@ -99,7 +100,7 @@ class Script {
      */
     protected function script()
     {
-	fwrite(STDOUT, "Hello World!\n");
+      $this->write("Hello World");
     }
   
     /**
@@ -111,5 +112,14 @@ class Script {
 	$shortOptions = array();
 	$longOptions = array();
 	return array($shortOptions, $longOptions);
+    }
+    
+    /**
+     * Writes the string to STDOUT with a newline at the end
+     * @param String The string to write
+     */
+    protected function write($string)
+    {
+      fwrite(STDOUT, $string . "\n");
     }
 }
