@@ -77,10 +77,10 @@ class Hash extends SM\Script\Script {
 	Options:
 	    -s	The string to hash
 	    -f	The file to hash
-	    -a	The algorithm I should use to hash. 
+	    -a	The algorithm I should use to hash.
 	    ";
 	
-	$this->write( $help );
+	return $help;
     }
 }
 

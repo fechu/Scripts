@@ -14,10 +14,11 @@ class Script {
     /**
      * Shows the help.
      * This method is supposed to be overriden in a subclass.
+     * @return String The help
      */
     protected function help()
     {
-	$this->write("No help available\n");
+	return "No help available";
     }
 
     /**
@@ -50,7 +51,7 @@ class Script {
         // If no switches received, show the help
         if (count($received_options) == 0)
         {
-          $this->help();
+          $this->write($this->help());
           return;
         }
 
