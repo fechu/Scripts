@@ -9,6 +9,7 @@ If you feel they will help you, get them and use them. I released them under the
 * Random.php
 * Regex.php
 * Zend.php
+* Count.php
 
 ## Instructions
 
