@@ -46,6 +46,11 @@ class Count extends SM\Script\Script {
 	$chars = strlen($text);
 	$this->write("Characters: " . $chars);	
 	
+	// Count the characters without whitespaces
+	$plainText = preg_replace("/\s*/i", "", $text);
+	$charsWithout = strlen($plainText);
+	$this->write("Characters without whitespaces: " . $charsWithout);
+	
 	// Count the words
 	$words = preg_match_all("/\w+/", $text, $matches);
 	$this->write("Words: ". $words);
