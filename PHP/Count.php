@@ -52,7 +52,7 @@ class Count extends SM\Script\Script {
 		$this->write("Characters without whitespaces: " . $charsWithout);
 		
 		// Count the words
-		$words = preg_match_all("/\w+/", $text, $matches);
+		$words = preg_match_all("/[-_A-Za-z0-9öäüÖÄÜ]+/i", $text, $matches);
 		$this->write("Words: ". $words);
 		
 		// Count the lines
