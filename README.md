@@ -10,6 +10,7 @@ If you feel they will help you, get them and use them. I released them under the
 * Regex.php
 * Zend.php
 * Count.php
+* FileToFolder.php
 
 ## Instructions
 
