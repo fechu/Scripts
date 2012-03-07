@@ -20,6 +20,15 @@ class Script {
     {
 	return "No help available";
     }
+    
+    /**
+     * This method is supposed to be overriden in a subclass.
+     * You can use this method to initialize some variables or whatever in your script.
+     */
+    protected function init()
+    {
+	// Does nothing by default.
+    }
 
     /**
      * Run the script.
@@ -92,7 +101,8 @@ class Script {
 	
 	
 	// Everything verified, start the script!
-	$this->options = $received_options;	
+	$this->options = $received_options;
+	$this->init();	
 	$this->script();
     }
     
