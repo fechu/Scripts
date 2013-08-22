@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 include_once 'Autoload.php';
@@ -69,6 +68,8 @@ class Count extends SM\Script\Script {
     }
 }
 
-// Run the scripts
-$script = new Count();
-$script->run();
+if (!defined('SCRIPT_STARTED')) {
+	// Run the scripts
+	$script = new Count();
+	$script->run();
+}

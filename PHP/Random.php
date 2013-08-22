@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 include 'Autoload.php';
@@ -163,6 +162,8 @@ class Random extends SM\Script\Script {
 
 }
 
-// Run the scripts
-$script = new Random();
-$script->run();
+if (!defined('SCRIPT_STARTED')) {
+	// Run the scripts
+	$script = new Random();
+	$script->run();
+}

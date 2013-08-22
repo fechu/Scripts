@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 include 'Autoload.php';
@@ -84,6 +83,8 @@ class Hash extends SM\Script\Script {
     }
 }
 
-// Run the script
-$script = new Hash();
-$script->run();
+if (!defined('SCRIPT_STARTED')) {
+	// Run the script
+	$script = new Hash();
+	$script->run();
+}

@@ -1,9 +1,8 @@
-#!/usr/bin/php
 <?php
 
 /**
  *
- * Dieses Skript ermšglich das einfach suchen und ersetzen von Werten in Files.
+ * Dieses Skript ermï¿½glich das einfach suchen und ersetzen von Werten in Files.
  * Es sind die folgenden switches vorhanden:
  *
  *    -s <pattern>: Suche nach diesem Regex Pattern (oder string)
