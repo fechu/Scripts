@@ -75,6 +75,11 @@ class Script {
     		$this->loadOptions();
     	}
     	
+    	// The script started.
+    	if (!defined('SCRIPT_STARTED')) {
+    		define('SCRIPT_STARTED', true);
+    	}
+    	
     	// Run the script
 		$this->init();	
 		$this->script();
